@@ -1,0 +1,7 @@
+{
+  "name": "app-repartidor",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

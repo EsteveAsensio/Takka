@@ -1,0 +1,43 @@
+/* 🔝 HEADER */
+.custom-header {
+  --background: #0f0f0f;
+  --color: white;
+
+  height: 60px;
+  min-height: 60px;
+
+  display: flex;
+  align-items: center;
+}
+
+/* 📦 CONTENEDOR LOGO */
+ion-buttons[slot="start"] {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: visible; /* 🔥 permite que el logo sobresalga */
+}
+
+/* 🖼️ LOGO */
+.logo-img {
+  height: 120px;
+  margin-top: 3px;
+}
+
+/* 📦 CONTENEDOR DERECHA */
+ion-buttons[slot="end"] {
+  display: flex;
+  align-items: center;
+}
+
+/* 🔘 BOTÓN */
+ion-button {
+  --color: #b48755;
+  --padding-start: 8px;
+  --padding-end: 8px;
+}
+
+/* 🔊 ICONO */
+ion-icon {
+  font-size: 24px;
+}

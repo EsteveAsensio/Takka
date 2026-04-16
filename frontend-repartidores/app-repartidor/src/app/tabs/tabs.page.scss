@@ -1,0 +1,22 @@
+/* 🎨 COLOR PRINCIPAL */
+:root {
+  --ion-color-primary: #b48755;
+}
+
+ion-tab-bar {
+  --background: #0f0f0f;
+}
+
+ion-tab-button {
+  color: #888;
+}
+
+ion-tab-button.tab-selected {
+  color: #b48755;
+}
+
+/* EFECTO AL PULSAR */
+ion-tab-button:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}

@@ -1,0 +1,46 @@
+<ion-content [fullscreen]="true" class="register-content">
+
+<ion-header>
+  <ion-toolbar>
+
+    <!-- BOTÓN VOLVER -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Iniciar sesión</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+  <div class="container">
+
+    <!-- FORMULARIO -->
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Correo electrónico</ion-label>
+        <ion-input type="email" placeholder="ejemplo@email.com"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Contraseña</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Confirmar contraseña</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <!-- BOTÓN -->
+    <div class="botones">
+      <ion-button expand="block" color="primary">
+        Iniciar sesión
+      </ion-button>
+    </div>
+
+  </div>
+
+</ion-content>

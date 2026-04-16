@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+
+    <div class="pedido-card" *ngFor="let pedido of pedidos">
+
+      <!-- RESTAURANTE -->
+    <div class="top-row">
+
+      <!-- IZQUIERDA -->
+      <div class="restaurante">
+        <img [src]="pedido.imagen" alt="restaurante">
+        <h3>{{ pedido.restaurante }}</h3>
+      </div>
+
+      <!-- DERECHA -->
+      <div class="precio-top">
+        {{ pedido.precio }} €
+      </div>
+
+    </div>
+
+      <!-- INFO -->
+      <div class="info">
+        <p><strong>Pedido:</strong> {{ pedido.descripcion }}</p>
+        <p><strong>Dirección:</strong> {{ pedido.direccion }}</p>
+      </div>
+
+      <!-- BOTÓN -->
+      <ion-button expand="block" (click)="aceptarPedido(pedido)">
+        Aceptar
+      </ion-button>
+
+    </div>
+
+  </div>
+
+</ion-content>

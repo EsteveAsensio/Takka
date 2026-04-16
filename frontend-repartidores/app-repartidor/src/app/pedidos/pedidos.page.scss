@@ -1,0 +1,72 @@
+.container {
+  padding: 15px;
+}
+
+/* CARD */
+.pedido-card {
+  background: #1c1c1c;
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+/* RESTAURANTE */
+.restaurante {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.restaurante img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* INFO */
+.info p {
+  margin: 5px 0;
+}
+
+.precio {
+  font-size: 18px;
+  font-weight: bold;
+  color: #b48755;
+}
+
+/* BOTÓN */
+ion-button {
+  margin-top: 10px;
+  --background: #b48755;
+  --color: white;
+  transition: 0.2s;
+}
+
+ion-button:active {
+  filter: brightness(0.6);
+  transform: scale(0.97);
+}
+
+/* FILA SUPERIOR */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* RESTAURANTE IZQUIERDA */
+.restaurante {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* PRECIO DERECHA */
+.precio-top {
+  font-size: 22px;
+  font-weight: bold;
+  color: #b48755;
+}

@@ -1,0 +1,99 @@
+/* PERFIL */
+.perfil-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* AVATAR */
+.avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #b48755;
+}
+
+/* BOTÓN EDITAR */
+.edit-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 14px;
+}
+
+/* TEXTO */
+.sub {
+  color: gray;
+  font-size: 14px;
+}
+
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.stat-box {
+  background: #1c1c1c;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  width: 30%;
+}
+
+.stat-title {
+  font-size: 12px;
+  color: gray;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: #b48755;
+}
+
+/* MENÚ */
+.menu {
+  margin: 20px;
+}
+
+.menu-item {
+  padding: 15px;
+  border-bottom: 1px solid #333;
+  color: white;
+}
+
+/* LOGOUT */
+.logout {
+  color: red;
+}
+
+/* ITEM MENÚ */
+.menu-item {
+  padding: 15px;
+  border-bottom: 1px solid #333;
+  color: white;
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+  border-radius: 10px;
+}
+
+/* CLICK (MÓVIL) */
+.menu-item:active {
+  background: rgba(180, 135, 85, 0.25);
+  transform: scale(0.98);
+}
+
+/* LOGOUT (más llamativo) */
+.logout {
+  color: #ff4d4d;
+}
+
+.logout:hover {
+  background: rgba(255, 77, 77, 0.15);
+}

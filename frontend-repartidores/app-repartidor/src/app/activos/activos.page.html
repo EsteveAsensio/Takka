@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+
+    <div class="pedido-card" *ngFor="let pedido of pedidos">
+
+      <!-- 🔝 FILA SUPERIOR -->
+      <div class="top-row">
+
+        <div class="restaurante">
+          <img [src]="pedido.imagen" alt="restaurante">
+          <h3>{{ pedido.restaurante }}</h3>
+        </div>
+
+        <div class="precio-top">
+          {{ pedido.precio }} €
+        </div>
+
+      </div>
+
+      <!-- 📦 INFO -->
+      <div class="info">
+        <p><strong>Pedido:</strong> {{ pedido.descripcion }}</p>
+        <p><strong>Dirección:</strong> {{ pedido.direccion }}</p>
+      </div>
+
+      <!-- 🚦 ESTADO -->
+      <p class="estado" [ngClass]="pedido.estado">
+        {{ pedido.estado | uppercase }}
+      </p>
+
+      <!-- 🔘 BOTÓN DINÁMICO -->
+      <ion-button 
+        expand="block"
+        [ngClass]="getClaseBoton(pedido.estado)"
+        (click)="cambiarEstado(pedido)"
+        *ngIf="pedido.estado !== 'completado'"
+      >
+        {{ getTextoBoton(pedido.estado) }}
+      </ion-button>
+
+      <!-- ✅ COMPLETADO -->
+      <p class="completado-texto" *ngIf="pedido.estado === 'completado'"></p>
+
+    </div>
+
+  </div>
+
+</ion-content>

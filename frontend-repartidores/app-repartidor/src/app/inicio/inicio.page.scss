@@ -1,0 +1,46 @@
+.inicio-content {
+  --background: none;
+  position: relative;
+  height: 100%;
+}
+
+/* IMAGEN DE FONDO */
+.inicio-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/assets/repartidor.png') no-repeat center center / cover;
+  z-index: 0;
+}
+
+.btn-outline {
+  --color: #b48755;
+  --border-color: #b48755;
+}
+
+/* CONTENIDO ENCIMA */
+.container {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo img {
+  width: 900px;
+  margin: 20px auto;
+}
+
+.botones {
+  margin-bottom: 20px;
+}
+
+ion-button {
+  margin-top: 10px;
+  border-radius: 40px;
+}

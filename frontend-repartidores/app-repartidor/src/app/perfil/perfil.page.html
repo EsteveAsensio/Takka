@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- PERFIL -->
+  <div class="perfil-container">
+
+    <div class="avatar-container">
+      <img src="assets/user.jpg" class="avatar" />
+      <ion-button fill="clear" class="edit-btn">
+        ✏️
+      </ion-button>
+    </div>
+
+    <h2>Esteve Asensio Meléndez</h2>
+    <p class="sub">{{ fechaHoy }}</p>
+
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+
+    <div class="stat-box">
+      <p class="stat-title">Balance</p>
+      <p class="stat-value">0.00 €</p>
+    </div>
+
+    <div class="stat-box">
+      <p class="stat-title">Pedidos</p>
+      <p class="stat-value">0</p>
+    </div>
+
+    <div class="stat-box">
+      <p class="stat-title">Total</p>
+      <p class="stat-value">0.00 €</p>
+    </div>
+
+  </div>
+
+  <!-- MENÚ -->
+<div class="menu">
+
+  <div class="menu-item" (click)="irPerfil()">
+    👤 Información personal
+  </div>
+  <div class="menu-item" (click)="irResumen()">
+    📦 Resumen
+  </div>
+  <div class="menu-item" (click)="toggleTema()">
+    🌙 Color
+  </div>
+  <div class="menu-item" (click)="irSoporte()">
+    🆘 Soporte
+  </div>
+  <div class="menu-item logout" (click)="logout()">
+    🚪 Cerrar sesión
+  </div>
+
+</div>
+
+</ion-content>

@@ -1,0 +1,89 @@
+.container {
+  padding: 15px;
+}
+
+/* CARD */
+.pedido-card {
+  background: #1c1c1c;
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+/* FILA SUPERIOR */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* RESTAURANTE */
+.restaurante {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.restaurante img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* PRECIO */
+.precio-top {
+  font-size: 22px;
+  font-weight: bold;
+  color: #b48755;
+}
+
+/* INFO */
+.info p {
+  margin: 5px 0;
+}
+
+/* ESTADO */
+.estado {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.aceptado {
+  color: #3498db;
+}
+
+.en_reparto {
+  color: orange;
+}
+
+.completado {
+  color: #2ecc71;
+}
+
+/* TEXTO COMPLETADO */
+.completado-texto {
+  margin-top: 10px;
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+/* BOTONES POR ESTADO */
+.btn-reparto {
+  margin-top: 10px;
+  --background: #3498db;
+  --color: white;
+}
+
+.btn-entregado {
+  margin-top: 10px;
+  --background: orange;
+  --color: white;
+}
+
+/* EFECTO CLICK */
+ion-button:active {
+  transform: scale(0.97);
+  filter: brightness(0.9);
+}
