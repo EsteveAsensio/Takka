@@ -1,0 +1,86 @@
+.container {
+  padding: 15px;
+}
+
+/* 📊 GRID */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.stat-card {
+  background: #1c1c1c;
+  border-radius: 16px;
+  padding: 15px;
+  text-align: center;
+}
+
+/* ICONOS */
+.stat-card ion-icon {
+  font-size: 28px;
+  color: #b48755;
+  margin-bottom: 5px;
+}
+
+/* TEXTO */
+.stat-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #b48755;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: gray;
+}
+
+/* 📅 CALENDARIO */
+.calendar-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* HISTORIAL */
+.pedido-card {
+  background: #1c1c1c;
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* FILA */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* RESTAURANTE */
+.restaurante {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.restaurante img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+/* PRECIO */
+.precio {
+  font-weight: bold;
+  color: #b48755;
+}
+
+/* FECHA */
+.fecha {
+  font-size: 12px;
+  color: gray;
+}

@@ -1,13 +1,69 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>resumen</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">resumen</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+  <div class="container">
+
+    <!-- 📊 STATS -->
+    <div class="stats-grid">
+
+      <div class="stat-card">
+        <ion-icon name="cube-outline"></ion-icon>
+        <p class="stat-value">{{ totalPedidos }}</p>
+        <p class="stat-label">Pedidos</p>
+      </div>
+
+      <div class="stat-card">
+        <ion-icon name="cash-outline"></ion-icon>
+        <p class="stat-value">{{ totalDinero }} €</p>
+        <p class="stat-label">Facturación</p>
+      </div>
+
+      <div class="stat-card">
+        <ion-icon name="navigate-outline"></ion-icon>
+        <p class="stat-value">{{ totalKm }} km</p>
+        <p class="stat-label">Distancia</p>
+      </div>
+
+      <div class="stat-card">
+        <ion-icon name="star-outline"></ion-icon>
+        <p class="stat-value">{{ topRestaurante }}</p>
+        <p class="stat-label">Top restaurante</p>
+      </div>
+
+    </div>
+
+    <!-- 📅 CALENDARIO -->
+    <div class="calendar-box">
+      <ion-datetime presentation="date" (ionChange)="onFechaChange($event)"></ion-datetime>
+    </div>
+
+    <!-- 📦 HISTORIAL -->
+    <div class="historial">
+
+      <div class="pedido-card" *ngFor="let pedido of pedidosFiltrados">
+
+        <div class="top-row">
+          <div class="restaurante">
+            <img [src]="pedido.imagen">
+            <h3>{{ pedido.restaurante }}</h3>
+          </div>
+
+          <div class="precio">
+            {{ pedido.precio }} €
+          </div>
+        </div>
+
+        <div class="info">
+          <p> <strong>Pedido:</strong> {{ pedido.descripcion }}</p>
+          <p> <strong>Dirección:</strong> {{ pedido.direccion }}</p>
+          <p class="fecha">{{ pedido.fecha }}</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </ion-content>

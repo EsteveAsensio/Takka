@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonButton } from '@ionic/angular/standalone';
 import { HeaderComponent } from "../shared/header/header.component";
+import { PedidoService } from '../services/pedido.service'; // 👈 IMPORTANTE
 
 @Component({
   selector: 'app-activos',
@@ -13,52 +14,32 @@ import { HeaderComponent } from "../shared/header/header.component";
 })
 export class ActivosPage implements OnInit {
 
-  constructor() {}
+  constructor(private pedidoService: PedidoService) {}
 
   ngOnInit() {}
 
-  // 📦 DATOS MOCK (IMPORTANTE: con estado)
-  pedidos = [
-    {
-      id: 1,
-      restaurante: 'KFC',
-      imagen: 'assets/kfc.png',
-      descripcion: '2 menús pollo',
-      direccion: 'Calle Cairo 123',
-      precio: 5,
-      estado: 'aceptado'
-    },
-    {
-      id: 2,
-      restaurante: 'Pizza Hut',
-      imagen: 'assets/pizzahut.png',
-      descripcion: 'Pizza grande + bebida',
-      direccion: 'Avenida Nile 45',
-      precio: 8,
-      estado: 'en_reparto'
-    }
-  ];
+  // 🔥 USAR SERVICIO
+  get pedidos() {
+    return this.pedidoService.pedidosActivos;
+  }
 
-  // 🔘 TEXTO DINÁMICO DEL BOTÓN
+  // 🔘 TEXTO BOTÓN
   getTextoBoton(estado: string): string {
     if (estado === 'aceptado') return 'Iniciar reparto';
     if (estado === 'en_reparto') return 'Marcar como entregado';
     return '';
   }
 
-  // 🔄 CAMBIO DE ESTADO
+  // 🔄 CAMBIO DE ESTADO REAL
   cambiarEstado(pedido: any) {
-    if (pedido.estado === 'aceptado') {
-      pedido.estado = 'en_reparto';
-    } else if (pedido.estado === 'en_reparto') {
-      pedido.estado = 'completado';
-    }
+    this.pedidoService.cambiarEstado(pedido);
   }
 
+  // 🎨 CLASE BOTÓN
   getClaseBoton(estado: string) {
     if (estado === 'aceptado') return 'btn-reparto';
     if (estado === 'en_reparto') return 'btn-entregado';
-  return '';
-}
+    return '';
+  }
 
 }

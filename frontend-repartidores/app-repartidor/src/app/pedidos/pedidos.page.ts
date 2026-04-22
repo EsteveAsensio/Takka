@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonButton } from '@ionic/angular/standalone';
 import { HeaderComponent } from "../shared/header/header.component";
 import { AlertController } from '@ionic/angular';
+import { PedidoService } from '../services/pedido.service';
 
 @Component({
   selector: 'app-pedidos',
@@ -14,32 +15,21 @@ import { AlertController } from '@ionic/angular';
 })
 export class PedidosPage implements OnInit {
 
-  constructor(private alertCtrl: AlertController) {}
+  constructor(
+    private alertCtrl: AlertController,
+    private pedidoService: PedidoService
+  ) {}
 
   ngOnInit() {}
 
-  // 📦 DATOS MOCK
-  pedidos = [
-    {
-      id: 1,
-      restaurante: 'KFC',
-      imagen: 'assets/kfc.png',
-      descripcion: '2 menús pollo',
-      direccion: 'Calle Cairo 123',
-      precio: 5
-    },
-    {
-      id: 2,
-      restaurante: 'Pizza Hut',
-      imagen: 'assets/pizzahut.png',
-      descripcion: 'Pizza grande + bebida',
-      direccion: 'Avenida Nile 45',
-      precio: 8
-    }
-  ];
+  // USAR SERVICIO (NO ARRAY LOCAL)
+  get pedidos() {
+    return this.pedidoService.pedidosDisponibles;
+  }
 
-  // ACEPTAR PEDIDO (CON ALERTA PRO)
+  // ACEPTAR PEDIDO CON ALERTA
   async aceptarPedido(pedido: any) {
+
     const alert = await this.alertCtrl.create({
       header: 'Confirmar pedido',
       message: `¿Aceptar ${pedido.precio}€ de ${pedido.restaurante}?`,
@@ -51,12 +41,7 @@ export class PedidosPage implements OnInit {
         {
           text: 'Aceptar',
           handler: () => {
-            console.log('Pedido aceptado:', pedido);
-
-            //eliminar de la lista
-            this.pedidos = this.pedidos.filter(p => p.id !== pedido.id);
-
-            // this.router.navigateByUrl('/tabs/activos');
+            this.pedidoService.aceptarPedido(pedido);
           }
         }
       ]
@@ -64,5 +49,4 @@ export class PedidosPage implements OnInit {
 
     await alert.present();
   }
-
 }
